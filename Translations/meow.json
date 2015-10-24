@@ -1,0 +1,34 @@
+{
+	"website": {
+		"howmanypostsdoyouhave": "How many posts do you have on scratch?",
+		"howmanypostsdoyouhavehelp": "Go to Discuss Scratch then go to the bottom then click Show your topics/posts click the POSTS link not TOPICS",
+		"goal": "Goal?",
+		"mode": "Mode?",
+		"modehelp": "The size of image",
+		"coloroptions": "Color Options?",
+		"previewbtn": "Preview and Download image! After clicking wait for image then click again then press download",
+		"downloadbtn": "Download",
+		"createdby": "This was created by <a href='https://scratch.mit.edu/users/Mrcomputer1'>Mrcomputer1</a>",
+		"issuetracker": "<a href='https://github.com/Mrcomputer1/PostCountProgressBar/issues'>Issue Tracker</a>",
+		"colorrequires": "<b>Requires COLOR inputs - Use Mozilla Firefox, Google Chrome and Opera - Safari and Microsoft Internet Explorer not supported",
+		"backgroundcolor": "Background Color:",
+		"notcompletecolor": "Not complete color:",
+		"textcolor": "Text color:",
+		"completecolor": "Complete color:"
+	},
+	"coloroptions": {
+		"default": "Default",
+		"white": "White",
+		"halloween2015": "Halloween (October 2015)",
+		"custom": "Custom"
+	},
+	"modeoptions": {
+		"big": "Big",
+		"medium": "Medium",
+		"small1": "Small (Percent)",
+		"small2": "Small (Count)"
+	},
+	"progressbar": {
+		"posts": "posts"
+	}
+}
