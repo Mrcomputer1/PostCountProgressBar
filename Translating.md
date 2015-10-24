@@ -1,6 +1,6 @@
 # Translating guide
 
-NOTE: All language files are located at http://mrcomputer1.gwiddle.co.uk/progressbarlanguage/ or https://github.com/Mrcomputer1/PostCountProgresBar/tree/master/Translations
+NOTE: All language files are located at http://mrcomputer1.gwiddle.co.uk/progressbarlanguage/ or https://github.com/Mrcomputer1/PostCountProgressBar/tree/master/Translations
 
 ## New language
 
