@@ -1,9 +1,10 @@
 {
 	"website": {
+		"title": "Mrcomputer1's Post Count Progress Bar",
 		"howmanypostsdoyouhave": "How many posts do you have on scratch?",
 		"howmanypostsdoyouhavehelp": "Go to Discuss Scratch then go to the bottom then click Show your topics/posts click the POSTS link not TOPICS",
 		"goal": "Goal?",
-		"mode": "Mode?",
+		"mode": "Size?",
 		"modehelp": "The size of image",
 		"coloroptions": "Color Options?",
 		"previewbtn": "Preview and Download image! After clicking wait for image then click again then press download",
@@ -30,5 +31,13 @@
 	},
 	"progressbar": {
 		"posts": "posts"
+	},
+	"steptabs":{
+		"step1": "Post count and goal",
+		"step2": "Size",
+		"step3": "Color settings",
+		"step4": "Download",
+		"nextstep": "Next step",
+		"prevstep": "Go back"
 	}
 }
