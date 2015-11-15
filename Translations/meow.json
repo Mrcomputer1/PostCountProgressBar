@@ -1,9 +1,10 @@
 {
 	"website": {
+		"title": "Mrcomputer1's MEOW Count Progress Bar",
 		"howmanypostsdoyouhave": "How many MEOWS do you have on scratch?",
 		"howmanypostsdoyouhavehelp": "Go to Discuss Scratch then go to the bottom then click Show your topics/meows click the MEOWS link not TOPICS",
 		"goal": "Goal?",
-		"mode": "Mode?",
+		"mode": "Size?",
 		"modehelp": "The size of meow",
 		"coloroptions": "Color Options?",
 		"previewbtn": "Preview and Download meow! After clicking wait for meow then click again then press download",
@@ -30,5 +31,13 @@
 	},
 	"progressbar": {
 		"posts": "MEOWS"
+	},
+	"steptabs":{
+		"step1": "MEOW count and goal",
+		"step2": "Size",
+		"step3": "Color settings",
+		"step4": "Download",
+		"nextstep": "Next step",
+		"prevstep": "Go back"
 	}
 }
