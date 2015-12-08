@@ -15,7 +15,9 @@
 		"backgroundcolor": "Background Color:",
 		"notcompletecolor": "Not complete color:",
 		"textcolor": "Text color:",
-		"completecolor": "Complete color:"
+		"completecolor": "Complete color:",
+		"unit": "Unit?",
+		"toggletheme": "Toggle dark/bright color"
 	},
 	"coloroptions": {
 		"default": "Default",
