@@ -15,12 +15,15 @@
 		"backgroundcolor": "Background Color:",
 		"notcompletecolor": "Not complete color:",
 		"textcolor": "Text color:",
-		"completecolor": "Complete color:"
+		"completecolor": "Complete color:",
+		"unit": "Unit?",
+		"toggletheme": "Toggle dark/bright MEOW"
 	},
 	"coloroptions": {
 		"default": "Default MEOW",
 		"white": "White MEOW",
 		"halloween2015": "Meowoween (Meowober 2015)",
+		"christmas2015": "Meowmas (Meowember 2015)",
 		"custom": "Custom MEOW"
 	},
 	"modeoptions": {
