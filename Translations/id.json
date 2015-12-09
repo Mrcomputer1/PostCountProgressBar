@@ -15,12 +15,15 @@
 		"backgroundcolor": "Background Color:",
 		"notcompletecolor": "Warna yang tidak lengkap:",
 		"textcolor": "Warna teks:",
-		"completecolor": "Warna komplit:"
+		"completecolor": "Warna komplit:",
+		"unit": "Unit?",
+		"toggletheme": "Toggle dark/bright color"
 	},
 	"coloroptions": {
 		"default": "Default",
 		"white": "Putih",
 		"halloween2015": "Halloween (October 2015)",
+		"christmas2015": "Christmas (December 2015)",
 		"custom": "Kostum"
 	},
 	"modeoptions": {
