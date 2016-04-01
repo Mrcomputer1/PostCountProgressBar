@@ -1,0 +1,46 @@
+{
+	"website": {
+		"title": "TXJjb21wdXRlcjEncyBQb3N0IENvdW50IFByb2dyZXNzIEJhcg==",
+		"howmanypostsdoyouhave": "SG93IG1hbnkgcG9zdHMgZG8geW91IGhhdmUgb24gU2NyYXRjaD8=",
+		"howmanypostsdoyouhavehelp": "R28gdG8gU2NyYXRjaCA+IERpc2N1c3MsIHRoZW4gZ28gdG8gdGhlIGJvdHRvbSBvZiB0aGUgcGFnZS4gQ2xpY2sgXCJTaG93IHlvdXIgdG9waWNzL3Bvc3RzXCIsIHRoZW4gY2xpY2sgdGhlIFwiUG9zdHNcIiBsaW5rIChub3QgXCJUb3BpY3NcIikgdG8gc2VlIHlvdXIgcG9zdCBjb3VudC4=",
+		"goal": "R29hbD8=",
+		"mode": "U2l6ZT8=",
+		"modehelp": "VGhlIHNpemUgb2YgdGhlIGltYWdl",
+		"coloroptions": "Q29sb3IgT3B0aW9ucz8=",
+		"previewbtn": "UHJldmlldyBhbmQgRG93bmxvYWQgaW1hZ2UhIEFmdGVyIGNsaWNraW5nIHdhaXQgZm9yIGltYWdlIHRoZW4gY2xpY2sgYWdhaW4gdGhlbiBwcmVzcyBkb3dubG9hZA==",
+		"downloadbtn": "RG93bmxvYWQ=",
+		"createdby": "VGhpcyB3YXMgY3JlYXRlZCBieQ==<a href='https://scratch.mit.edu/users/Mrcomputer1'>TXJjb21wdXRlcjE=</a>",
+		"issuetracker": "<a href='https://github.com/Mrcomputer1/PostCountProgressBar/issues'>SXNzdWUgVHJhY2tlcg==</a>",
+		"colorrequires": "<b>UmVxdWlyZXMgQ09MT1IgaW5wdXRzIC0gVXNlIE1vemlsbGEgRmlyZWZveCwgR29vZ2xlIENocm9tZSBhbmQgT3BlcmEgLSBTYWZhcmkgYW5kIE1pY3Jvc29mdCBJbnRlcm5ldCBFeHBsb3JlciBub3Qgc3VwcG9ydGVk</b>",
+		"backgroundcolor": "QmFja2dyb3VuZCBDb2xvcjo=",
+		"notcompletecolor": "Tm90IGNvbXBsZXRlIGNvbG9yOg==",
+		"textcolor": "VGV4dCBjb2xvcjo=",
+		"completecolor": "Q29tcGxldGUgY29sb3I6",
+		"unit": "VW5pdD8=",
+		"toggletheme": "VG9nZ2xlIGRhcmsvYnJpZ2h0IGNvbG9y"
+},
+ "coloroptions": {
+"default": "RGVmYXVsdA==",
+		"white": "",
+		"halloween2015": "SGFsbG93ZWVuIChPY3RvYmVyIDIwMTUp",
+ 		"christmas2015": "Q2hyaXN0bWFzIChEZWNlbWJlciAyMDE1KQ==",
+		"custom": "Q3VzdG9t"
+ },
+"modeoptions": {
+ 		"big": "Qmln",
+		"medium": "TWVkaXVt",
+		"small1": "U21hbGwgKFBlcmNlbnQp",
+ 		"small2": "U21hbGwgKENvdW50KQ=="
+},
+"progressbar": {
+	"posts": "cG9zdHM="
+},
+"steptabs":{
+		"step1": "UG9zdCBjb3VudCBhbmQgZ29hbA==",
+		"step2": "U2l6ZQ==",
+		"step3": "Q29sb3Igc2V0dGluZ3M=",
+		"step4": "RG93bmxvYWQ=",
+		"nextstep": "TmV4dCBzdGVw",
+		"prevstep": "R28gYmFjaw=="
+	}
+}
