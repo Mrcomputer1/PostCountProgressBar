@@ -1,0 +1,46 @@
+{
+	"website": {
+		"title": "Mrcomputer1's Barre de Progrès de Message Quantité",
+		"howmanypostsdoyouhave": "Combien de postes avez-vous sur Scratch?",
+		"howmanypostsdoyouhavehelp": "Allez à Scratch > Discuter, puis accédez vers le bas. Clic \"Montrer votre sujets/messages\", puis clic \"Messages\" (pas \"Sujets\") afin de voir le montant de votre poste.",
+		"goal": "Objectif?",
+		"mode": "Taille?",
+		"modehelp": "La taille de l'image",
+		"coloroptions": "Couleur?",
+		"previewbtn": "Preview et télécharger l'image! Après avoir cliqué, attendez pour l'image à charger, puis cliquez à nouveau puis cliquez sur télécharger.",
+		"downloadbtn": "Télécharger",
+		"createdby": "Ceci a été créé par <a href='https://scratch.mit.edu/users/Mrcomputer1'>Mrcomputer1</a>",
+		"issuetracker": "<a href='https://github.com/Mrcomputer1/PostCountProgressBar/issues'>Issue Tracker</a>",
+		"colorrequires": "<b>Utiliser Mozilla Firefox, Google Chrome et Opera - Safari et Microsoft Internet Explorer ne sont pas pris en charge</b>",
+		"backgroundcolor": "Couleur de fond:",
+		"notcompletecolor": "Couleur de incomplet:",
+		"textcolor": "Couleur de texte:",
+		"completecolor": "Couleur de complet:",
+		"unit": "Unité?",
+		"toggletheme": "Basculé couleur foncé/clair"
+	},
+	"coloroptions": {
+		"default": "Défaut",
+		"white": "Blanc",
+		"halloween2015": "Halloween (Octobre 2015)",
+		"christmas2015": "Noël (Decembre 2015)",
+		"custom": "Customisé"
+	},
+	"modeoptions": {
+		"big": "Grand",
+		"medium": "Moyen",
+		"small1": "Petit (Pour cent)",
+		"small2": "Petit (Quantité)"
+	},
+	"progressbar": {
+		"posts": "messages"
+	},
+	"steptabs":{
+		"step1": "Message quantité et objectif",
+		"step2": "Taille",
+		"step3": "Paramètres de couleur",
+		"step4": "Télécharger",
+		"nextstep": "Prochaine étape",
+		"prevstep": "Rentrer"
+	}
+}
