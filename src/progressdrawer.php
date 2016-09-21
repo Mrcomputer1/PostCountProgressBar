@@ -3,7 +3,7 @@
 //
 // Mrcomputer1's Post Count Progress Bar
 // Copyright (C) 2016 Mrcomputer1
-// License: GPL-3.0
+// License: Not yet selected for now think of it as GPL-3.0
 // ----
 // You must give credit on all things you use this script (or a modified version of it) on.
 // You are forbidden to remove this notice
