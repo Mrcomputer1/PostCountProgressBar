@@ -34,7 +34,7 @@ export class ProgressBar{
         return this;
     }
     setProgress(current, total){
-        var percent = (total - current) / total * 100;
+        var percent = current / total * 100;
         this.current = current;
         this.total = total;
         this.percent = percent;

@@ -6,7 +6,7 @@
 
 import {ProgressBarGenerator} from '../Extensions';
 
-// 305, 20
+// 310, 20
 export class CanvasSmallGenerator extends ProgressBarGenerator{
     constructor(canvas){
         super()
@@ -16,7 +16,7 @@ export class CanvasSmallGenerator extends ProgressBarGenerator{
         var ctx = document.querySelector(this.canvas).getContext("2d");
         // Background
         ctx.fillStyle = progressBar._theme.background;
-        ctx.fillRect(0, 0, 305, 20);
+        ctx.fillRect(0, 0, 310, 20);
         // Red Lines
         ctx.fillStyle = progressBar._theme.incomplete;
         var doneI;
@@ -37,6 +37,6 @@ export class CanvasSmallGenerator extends ProgressBarGenerator{
         ctx.fillText(progressBar.current + "/" + progressBar.total + " " + progressBar.unit, 5, 16);
     }
     getSize(){
-        return [305, 20];
+        return [310, 20];
     }
 }

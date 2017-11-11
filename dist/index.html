@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Post Count Progress Bar Testing</title>
+        <title>Post Count Progress Bar</title>
+        <link rel="stylesheet" href="style.css">
         <script src="bundle.min.js"></script>
+        <script>
+            var bar = new progressBar();
+            bar.use(new progressBar.extensions.autoSize())
+                .use(new progressBar.extensions.autoClear())
+            document.addEventListener("DOMContentLoaded", function(){
+                document.getElementById("gen").onclick = function(){
+                    var done = parseInt(document.getElementById("done").value);
+                    var goal = parseInt(document.getElementById("goal").value);
+                    var unit = document.getElementById("unit").value;
+                    var theme = document.getElementById("theme").value;
+                    var generator = document.getElementById("style").value + "Generator";
+                    bar.use(new progressBar.themes[theme]())
+                        .use(new progressBar.generators[generator]("#canvas"))
+                        .setProgress(done, goal)
+                        .setUnit(unit);
+                    bar.generate();
+                    //document.getElementById("ahref").href = document.querySelector("#canvas").toDataURL();
+                    document.querySelector("#canvas").toBlob(function(blob){
+                        document.getElementById("ahref").href = URL.createObjectURL(blob);
+                    }, "image/png");
+                };
+            });
+        </script>
     </head>
     <body>
-        <canvas id="test"></canvas>
-        <hr/>
-        <a href="javascript:void(0);" onclick="var bar = new progressBar();bar.setProgress(50, 100).setUnit('posts').use(new progressBar.themes.white()).use(new progressBar.generators.CanvasBigGenerator('#test')).use(new progressBar.extensions.autoSize()).use(new progressBar.extensions.autoClear()).generate()">Big</a>
-        <a href="javascript:void(0);" onclick="var bar = new progressBar();bar.setProgress(50, 100).setUnit('posts').use(new progressBar.themes.default()).use(new progressBar.generators.CanvasSmallGenerator('#test')).use(new progressBar.extensions.autoSize()).use(new progressBar.extensions.autoClear()).generate()">Small</a>
-        <a href="javascript:void(0);" onclick="var bar = new progressBar();bar.setProgress(50, 100).setUnit('posts').use(new progressBar.themes.default()).use(new progressBar.generators.CanvasBackgroundPercentGenerator('#test')).use(new progressBar.extensions.autoSize()).use(new progressBar.extensions.autoClear()).generate()">Background Percent</a>
-        <a href="javascript:void(0);" onclick="var bar = new progressBar();bar.setProgress(50, 100).setUnit('posts').use(new progressBar.themes.default()).use(new progressBar.generators.CanvasBackgroundPostsGenerator('#test')).use(new progressBar.extensions.autoSize()).use(new progressBar.extensions.autoClear()).generate()">Background Posts</a>
+        <div id="container">
+            <canvas id="canvas" height="20"></canvas><br>
+            <a id="ahref" href="#" download="ProgressBar.png">Download</a>
+            <hr>
+            <input type="number" id="done" placeholder="Done"><br><br>
+            <input type="number" id="goal" placeholder="Goal"><br><br>
+            <input type="text" id="unit" value="posts" placeholder="Unit"><br><br>
+            <hr>
+            <select id="theme">
+                <option value="default">Default (Black background)</option>
+                <option value="white">White</option>
+            </select><br><br>
+            <select id="style">
+                <option value="CanvasBig">Big</option>
+                <option value="CanvasSmall">Medium</option>
+                <option value="CanvasBackgroundPosts">Small (Posts)</option>
+                <option value="CanvasBackgroundPercent">Small (Percent)</option>S
+            </select>
+            <hr>
+            <input type="button" id="gen" value="Generate">
+        </div>
     </body>
 </html>

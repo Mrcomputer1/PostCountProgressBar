@@ -96,8 +96,8 @@ White background, black text, green complete lines, red incomplete lines
 
 ## progressBar.extensions
 
-## AutoClear
+## autoClear
 Clear the canvas before generating
 
-## AutoSize
+## autoSize
 Set the canvas size before generating
