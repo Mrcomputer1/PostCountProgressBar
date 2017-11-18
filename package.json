@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
 	"build": "webpack",
-	"deploy": "webpack && gh-pages --dist dist -m Built bundle.min.js"
+	"deploy": "webpack && gh-pages --dist dist"
   },
   "repository": {
     "type": "git",
