@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Post Count Progress Bar Testing</title>
+        <script src="bundle.min.js"></script>
+    </head>
+    <body>
+        <canvas id="test"></canvas>
+        <hr/>
+        <a href="javascript:void(0);" onclick="var bar = new progressBar();bar.setProgress(50, 100).setUnit('posts').use(new progressBar.themes.white()).use(new progressBar.generators.CanvasBigGenerator('#test')).use(new progressBar.extensions.autoSize()).use(new progressBar.extensions.autoClear()).generate()">Big</a>
+        <a href="javascript:void(0);" onclick="var bar = new progressBar();bar.setProgress(50, 100).setUnit('posts').use(new progressBar.themes.default()).use(new progressBar.generators.CanvasSmallGenerator('#test')).use(new progressBar.extensions.autoSize()).use(new progressBar.extensions.autoClear()).generate()">Small</a>
+        <a href="javascript:void(0);" onclick="var bar = new progressBar();bar.setProgress(50, 100).setUnit('posts').use(new progressBar.themes.default()).use(new progressBar.generators.CanvasBackgroundPercentGenerator('#test')).use(new progressBar.extensions.autoSize()).use(new progressBar.extensions.autoClear()).generate()">Background Percent</a>
+        <a href="javascript:void(0);" onclick="var bar = new progressBar();bar.setProgress(50, 100).setUnit('posts').use(new progressBar.themes.default()).use(new progressBar.generators.CanvasBackgroundPostsGenerator('#test')).use(new progressBar.extensions.autoSize()).use(new progressBar.extensions.autoClear()).generate()">Background Posts</a>
+    </body>
+</html>
