@@ -4,7 +4,9 @@
   "description": "Makes a progress bar for how many posts you have on a forum or really anything else!",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"build": "webpack",
+	"deploy": "webpack && gh-pages --dist dist -m Built bundle.min.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
+    "gh-pages": "^1.1.0",
     "uglifyjs-webpack-plugin": "^1.0.1",
     "webpack": "^3.8.1"
   }
