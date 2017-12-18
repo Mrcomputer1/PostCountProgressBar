@@ -1,54 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Post Count Progress Bar</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="bundle.min.js"></script>
-        <script>
-            var bar = new progressBar();
-            bar.use(new progressBar.extensions.autoSize())
-                .use(new progressBar.extensions.autoClear())
-            document.addEventListener("DOMContentLoaded", function(){
-                document.getElementById("gen").onclick = function(){
-                    var done = parseInt(document.getElementById("done").value);
-                    var goal = parseInt(document.getElementById("goal").value);
-                    var unit = document.getElementById("unit").value;
-                    var theme = document.getElementById("theme").value;
-                    var generator = document.getElementById("style").value + "Generator";
-                    bar.use(new progressBar.themes[theme]())
-                        .use(new progressBar.generators[generator]("#canvas"))
-                        .setProgress(done, goal)
-                        .setUnit(unit);
-                    bar.generate();
-                    //document.getElementById("ahref").href = document.querySelector("#canvas").toDataURL();
-                    document.querySelector("#canvas").toBlob(function(blob){
-                        document.getElementById("ahref").href = URL.createObjectURL(blob);
-                    }, "image/png");
-                };
-            });
-        </script>
-    </head>
-    <body>
-        <div id="container">
-            <canvas id="canvas" height="20"></canvas><br>
-            <a id="ahref" href="#" download="ProgressBar.png">Download</a>
-            <hr>
-            <input type="number" id="done" placeholder="Done"><br><br>
-            <input type="number" id="goal" placeholder="Goal"><br><br>
-            <input type="text" id="unit" value="posts" placeholder="Unit"><br><br>
-            <hr>
-            <select id="theme">
-                <option value="default">Default (Black background)</option>
-                <option value="white">White</option>
-            </select><br><br>
-            <select id="style">
-                <option value="CanvasBig">Big</option>
-                <option value="CanvasSmall">Medium</option>
-                <option value="CanvasBackgroundPosts">Small (Posts)</option>
-                <option value="CanvasBackgroundPercent">Small (Percent)</option>S
-            </select>
-            <hr>
-            <input type="button" id="gen" value="Generate">
-        </div>
-    </body>
+	<head>
+		<title>Post Count Progress Bar</title>
+		<!-- CSS -->
+		<link rel="stylesheet" href="style.css">
+		<!-- JavaScript -->
+		<script src="//cdn.jsdelivr.net/npm/vue@2.5.11"></script> <!-- Vue.js v2.5.11 -->
+		<script src="bundle.min.js"></script> <!-- Post Count Progress Bar -->
+		<script src="script.js"></script> <!-- Website JS -->
+	</head>
+	<body>
+		<canvas id="canvas" height="20"></canvas>
+		<div id="app">
+			<div v-show="page == 1" class="page">
+				<h1>Post Count Progress Bar</h1>
+				<input type="number" min=0 required id="done" placeholder="Done"><br/><br/>
+				<input type="number" min=0 required id="goal" placeholder="Goal"><br/><br/>
+				<input type="text" id="unit" placeholder="Unit" value="posts"><br/><br/>
+			</div>
+			<div v-show="page == 2" class="page">
+				<h1>What theme?</h1>
+				<select id="theme">
+					<option value="default">Default (Black background)</option>
+					<option value="white">White</option>
+				</select>
+			</div>
+			<div v-show="page == 3" class="page">
+				<h1>What style?</h1>
+				<select id="generator">
+					<option value="CanvasBig">Big</option>
+					<option value="CanvasSmall">Medium</option>
+					<option value="CanvasBackgroundPosts">Small (Posts)</option>
+					<option value="CanvasBackgroundPercent">Small (Percent)</option>
+				</select>
+			</div>
+			<div v-show="page == 4" class="page">
+				<h1>Post Count Progress Bar</h1>
+				You can see a preview of your progress bar above! Or you can download it below!<br/>
+				<a v-bind:href="downloadLink" download="ProgressBar.png">Download your Progress Bar</a>
+			</div>
+			
+			<!-- Buttons -->
+			<button v-if="page != 4" v-on:click="generate" style="width: 100%">Preview</button>
+			<div v-if="page == 1">
+				<button v-on:click="next" style="width: 100%">Next</button>
+			</div>
+			<div v-else-if="page == 2">
+				<button v-on:click="back" style="width: 49.5%">Back</button>
+				<button v-on:click="next" style="width: 49.5%">Next</button>
+			</div>
+			<div v-else-if="page == 3">
+				<button v-on:click="back" style="width: 49.5%">Back</button>
+				<button v-on:click="next" style="width: 49.5%">Next</button>
+			</div>
+			<div v-else-if="page == 4">
+				<button v-on:click="restart" style="width: 100%">Start Again</button>
+			</div>
+		</div>
+	</body>
 </html>
