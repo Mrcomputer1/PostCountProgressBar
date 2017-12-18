@@ -1,8 +1,52 @@
-hr{
-    border-left: none;
-    border-right: none;
-    border-bottom: none;
+body{
+	background-color: #287aff;
+	font-family: sans-serif;
+	color: white;
 }
-#container{
-    text-align: center;
+#app{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	width: 500px;
+}
+#canvas{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+}
+button, .button{
+	background-color: #287aff;
+	padding: 10px;
+	border: 0;
+	border-top: 5px solid #3d99ff;
+	color: white;
+}
+button:hover, .button:hover{
+	background-color: #288fff;
+}
+.page{
+	margin-bottom: 20px;
+}
+input, select{
+	padding: 10px;
+	background-color: #288fff;
+	border: 1px solid #288fff;
+	color: white;
+	width: 250px;
+}
+a{
+	color: white;
+}
+a:hover{
+	color: whitesmoke;
+}
+
+input[type="number"]{
+	-moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button{
+	-webkit-appearance: none;
+	margin: 0;
 }
