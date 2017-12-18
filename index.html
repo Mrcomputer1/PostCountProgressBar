@@ -5,7 +5,7 @@
 		<!-- CSS -->
 		<link rel="stylesheet" href="style.css">
 		<!-- JavaScript -->
-		<script src="//cdn.jsdelivr.net/npm/vue@2.5.11"></script> <!-- Vue.js v2.5.11 -->
+		<script src="http://cdn.jsdelivr.net/npm/vue@2.5.11"></script> <!-- Vue.js v2.5.11 -->
 		<script src="bundle.min.js"></script> <!-- Post Count Progress Bar -->
 		<script src="script.js"></script> <!-- Website JS -->
 	</head>
@@ -23,6 +23,7 @@
 				<select id="theme">
 					<option value="default">Default (Black background)</option>
 					<option value="white">White</option>
+					<option value="blue">Blue</option>
 				</select>
 			</div>
 			<div v-show="page == 3" class="page">
@@ -56,6 +57,10 @@
 			<div v-else-if="page == 4">
 				<button v-on:click="restart" style="width: 100%">Start Again</button>
 			</div>
+		</div>
+		<div class="footer">
+			Copyright &copy; 2017 Mrcomputer1 &bullet;
+			<a href="http://github.com/Mrcomputer1/PostCountProgressBar">Source Code</a>
 		</div>
 	</body>
 </html>
