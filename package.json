@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"build": "webpack",
-	"deploy": "webpack && gh-pages --dist dist"
+    "build": "webpack",
+    "deploy": "webpack && gh-pages --dist dist"
   },
   "repository": {
     "type": "git",

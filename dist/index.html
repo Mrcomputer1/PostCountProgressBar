@@ -10,7 +10,7 @@
 		<script src="script.js"></script> <!-- Website JS -->
 	</head>
 	<body>
-		<canvas id="canvas" height="20"></canvas>
+		<div id="canvas"></div>
 		<div id="app">
 			<div v-show="page == 1" class="page">
 				<h1>Post Count Progress Bar</h1>
@@ -33,12 +33,13 @@
 					<option value="CanvasSmall">Medium</option>
 					<option value="CanvasBackgroundPosts">Small (Posts)</option>
 					<option value="CanvasBackgroundPercent">Small (Percent)</option>
+					<option value="Text">Text</option>
 				</select>
 			</div>
 			<div v-show="page == 4" class="page">
 				<h1>Post Count Progress Bar</h1>
 				You can see a preview of your progress bar above! Or you can download it below!<br/>
-				<a v-bind:href="downloadLink" download="ProgressBar.png">Download your Progress Bar</a>
+				<a v-bind:href="downloadLink" v-bind:download="downloadName">Download your Progress Bar</a>
 			</div>
 			
 			<!-- Buttons -->
@@ -59,7 +60,7 @@
 			</div>
 		</div>
 		<div class="footer">
-			Copyright &copy; 2018 Mrcomputer1 &bullet;
+			Copyright &copy; 2019 Mrcomputer1 &bullet;
 			<a href="http://github.com/Mrcomputer1/PostCountProgressBar">Source Code</a>
 		</div>
 	</body>

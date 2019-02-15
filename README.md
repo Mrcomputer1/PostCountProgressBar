@@ -14,8 +14,9 @@ bar.setProgress(done, goal)
     .use(new progressBar.generators.CanvasBigGenerator("#canvas"));
 
 // Generate the bar into the canvas with
-// bar._generator.getSize() returns a Array of two numbers. Index 0 is X and Index 1 is Y.
 bar.generate();
+// bar._generator.getSize() returns a Array of two numbers. Index 0 is X and Index 1 is Y.
+// Note: getSize() can return null if no exact sizes are available (like the text generator).
 ```
 
 # progressBar API
@@ -37,7 +38,6 @@ Themes are used by the generator
 ### setUnit(String unit)
 
 ### generate()
-
 Runs the generater
 
 ## progressBar.extension
@@ -50,6 +50,7 @@ Called when ran
 ### constructor()
 
 ```
+super();
 // Sets the following
 this.background
 this.incomplete
@@ -59,32 +60,60 @@ this.text
 
 ## progressBar.generator
 
-### constructor(String canvas)
+### constructor(String element)
 ```
+super();
 // Sets the following
-this.canvas
+this.element
 ```
 
 ### run(ProgressBar bar)
 Called when ran
 
+### getSize()
+The exact size of the generated progress bar or null if no exact size.
+
+## progressBar.canvasGenerator
+
+### constructor(String element)
+The constructor is not required. But if you do use it you must include `super(element);` at the top.
+
+### run(ProgressBar bar)
+Called when ran
+
+### getSize()
+The needed size of the canvas
+
 ## progressBar.generators
 
-### CanvasBigGenerator(String canvas)
+### CanvasBigGenerator(String element)
 done/goal posts (100 lines) percent%
 
-### CanvasSmallGenerator(String canvas)
+`element` must be either a div element (which will be emptied and a canvas created inside) or a canvas.
+
+### CanvasSmallGenerator(String element)
 done/goal posts (bar) percent%
 
-### CanvasBackgroundPosts(String canvas)
+`element` must be either a div element (which will be emptied and a canvas created inside) or a canvas.
+
+### CanvasBackgroundPosts(String element)
 Background is progress bar
 
 Posts count is on top
 
-### CanvasBackgroundPercent(String canvas)
+`element` must be either a div element (which will be emptied and a canvas created inside) or a canvas.
+
+### CanvasBackgroundPercent(String element)
 Background is progress bar
 
 Percent is on top
+
+`element` must be either a div element (which will be emptied and a canvas created inside) or a canvas.
+
+### Text(String element)
+done/goal posts (bar) percent%.
+
+Background and text colour are ignored for the text generator.
 
 ## progressBar.themes
 
@@ -94,10 +123,13 @@ Black background, white text, green complete lines, red incomplete lines
 ### white
 White background, black text, green complete lines, red incomplete lines
 
+### blue
+Blue background, white text, green complete lines, red incomplete lines
+
 ## progressBar.extensions
 
 ## autoClear
-Clear the canvas before generating
+Clear the canvas before generating. Only for use when generating to a canvas.
 
 ## autoSize
-Set the canvas size before generating
+Set the canvas size before generating. Only for use when generating to a canvas.
