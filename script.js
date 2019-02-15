@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
 	window.bar = new progressBar();
-	window.bar.use(new progressBar.extensions.autoSize())
-		.use(new progressBar.extensions.autoClear());
+	//window.bar.use(new progressBar.extensions.autoSize())
+	//	.use(new progressBar.extensions.autoClear());
 	function generate(){
 		var done = parseInt(document.getElementById("done").value);
 		var goal = parseInt(document.getElementById("goal").value);
@@ -34,15 +34,17 @@ document.addEventListener("DOMContentLoaded", function(){
 			.setProgress(done, goal)
 			.setUnit(unit);
 		bar.generate();
-		document.getElementById("canvas").toBlob(function(blob){
-			window.app.downloadLink = URL.createObjectURL(blob);
-		}, "image/png");
+		bar.download(function(link){
+			window.app.downloadLink = link;
+			window.app.downloadName = "ProgressBar" + bar.getDownloadExtension();
+		});
 	}
 	window.app = new Vue({
 		el: "#app",
 		data: {
 			page: 1,
-			downloadLink: "javascript:alert('Not generated')"
+			downloadLink: "javascript:alert('Not generated')",
+			downloadName: "ProgressBar.dat"
 		},
 		methods: {
 			next: function(){
