@@ -40,6 +40,14 @@ Themes are used by the generator
 ### generate()
 Runs the generater
 
+### download(Function callback)
+Generates a download link and returns it in the callback function.
+
+### getDownloadExtension()
+Returns the extension of the download file, with a `.`
+
+For example, the canvas generators return `.png` and the text generators return `.txt`
+
 ## progressBar.extension
 
 ### run(ProgressBar bar)
@@ -72,6 +80,12 @@ Called when ran
 
 ### getSize()
 The exact size of the generated progress bar or null if no exact size.
+
+### getDownloadLink(Function callback)
+Generates a download link for the progress bar.
+
+### getDownloadExtension()
+Returns the extension of the download.
 
 ## progressBar.canvasGenerator
 
