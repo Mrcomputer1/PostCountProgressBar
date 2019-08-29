@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "deploy": "webpack && gh-pages --dist dist"
+    "build": "webpack-cli",
+    "deploy": "webpack-cli && gh-pages --dist dist"
   },
   "repository": {
     "type": "git",
@@ -19,11 +19,12 @@
   },
   "homepage": "https://github.com/Mrcomputer1/PostCountProgressBar#readme",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "gh-pages": "^1.1.0",
-    "uglifyjs-webpack-plugin": "^1.0.1",
-    "webpack": "^3.8.1"
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "gh-pages": "^2.1.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
   }
 }

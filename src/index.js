@@ -4,18 +4,18 @@
 // MIT License
 //
 
-import {ProgressBar} from './ProgressBar';
-import {ProgressBarExtension, ProgressBarTheme, ProgressBarGenerator, CanvasGenerator} from './Extensions';
-import {CanvasBigGenerator} from './generators/CanvasBig';
-import {CanvasSmallGenerator} from './generators/CanvasSmall';
-import {CanvasBackgroundPostsGenerator} from './generators/CanvasBackgroundPosts';
-import {CanvasBackgroundPercentGenerator} from './generators/CanvasBackgroundPercent';
-import {TextGenerator} from './generators/Text';
-import {ThemeDefault} from './themes/Default';
-import {ThemeWhite} from './themes/White';
-import {ThemeBlue} from './themes/Blue';
-import {AutoSizeExtension} from './extensions/AutoSize';
-import {AutoClearExtension} from './extensions/AutoClear';
+var {ProgressBar} = require('./ProgressBar');
+var {ProgressBarExtension, ProgressBarTheme, ProgressBarGenerator, CanvasGenerator} = require('./Extensions');
+var {CanvasBigGenerator} = require('./generators/CanvasBig');
+var {CanvasSmallGenerator} = require('./generators/CanvasSmall');
+var {CanvasBackgroundPostsGenerator} = require('./generators/CanvasBackgroundPosts');
+var {CanvasBackgroundPercentGenerator} = require('./generators/CanvasBackgroundPercent');
+var {TextGenerator} = require('./generators/Text');
+var {ThemeDefault} = require('./themes/Default');
+var {ThemeWhite} = require('./themes/White');
+var {ThemeBlue} = require('./themes/Blue');
+var {AutoSizeExtension} = require('./extensions/AutoSize');
+var {AutoClearExtension} = require('./extensions/AutoClear');
 
 module.exports = ProgressBar;
 module.exports.ProgressBar = ProgressBar;
