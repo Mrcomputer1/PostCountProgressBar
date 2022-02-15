@@ -1,6 +1,6 @@
 //
 // Mrcomputer1's Post Count Progress Bar
-// Copyright (C) 2019 Mrcomputer1
+// Copyright (C) 2022 Mrcomputer1
 // MIT License
 //
 
@@ -12,6 +12,7 @@ export class AutoClearExtension extends ProgressBarExtension{
 			console.warn("Unless you are generating directly to a canvas (which you're not), using AutoClear doesn't do anything and probably shouldn't be used.");
 			return;
 		}
+		
 		progressBar._generator.canvas.getContext("2d").clearRect(0, 0, progressBar._generator.getSize()[0], progressBar._generator.getSize()[1]);
 	}
 }

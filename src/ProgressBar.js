@@ -1,6 +1,6 @@
 //
 // Mrcomputer1's Post Count Progress Bar
-// Copyright (C) 2019 Mrcomputer1
+// Copyright (C) 2022 Mrcomputer1
 // MIT License
 //
 
@@ -12,11 +12,12 @@ export class ProgressBar{
 		this.total = null;
 		this.current = null;
 		this.percent = null;
+
 		this._theme = null;
-		this._language = null;
 		this._generator = null;
 		this._extensions = [];
 	}
+
 	use(extension){
 		if(extension instanceof ProgressBarTheme){
 			this._theme = extension;
@@ -27,28 +28,38 @@ export class ProgressBar{
 		}else{
 			throw new Error("Invalid extension.");
 		}
+
 		return this;
 	}
+
 	setUnit(unit){
 		this.unit = unit;
 		return this;
 	}
+
 	setProgress(current, total){
-		var percent = Math.round(current / total * 100);
 		this.current = current;
 		this.total = total;
-		this.percent = percent;
+		this.percent = Math.round(current / total * 100);
 		return this;
 	}
+
 	generate(){
-		for(var ext of this._extensions){
+		for(const ext of this._extensions){
 			ext.run(this);
  		}
+		
 		this._generator.run(this);
 	}
+
 	download(callback){
 		this._generator.getDownloadLink(callback);
 	}
+
+	releaseDownload(){
+		this._generator.releaseDownloadLink();
+	}
+	
 	getDownloadExtension(){
 		return this._generator.getDownloadExtension();
 	}

@@ -1,12 +1,13 @@
 //
 // Mrcomputer1's Post Count Progress Bar
-// Copyright (C) 2019 Mrcomputer1
+// Copyright (C) 2022 Mrcomputer1
 // MIT License
 //
 
 export class ProgressBarExtension{
 	constructor(){
 	}
+
 	run(progressBar){
 	}
 }
@@ -14,6 +15,7 @@ export class ProgressBarExtension{
 export class ProgressBarTheme extends ProgressBarExtension{
 	constructor(){
 		super();
+
 		this.background = null;
 		this.incomplete = null;
 		this.complete = null;
@@ -24,15 +26,20 @@ export class ProgressBarTheme extends ProgressBarExtension{
 export class ProgressBarGenerator extends ProgressBarExtension{
 	constructor(element){
 		super();
+
 		this.element = element;
 	}
+
     getSize(){
-        return [0, 0];
+        return null;
     }
-    run(progressBar){
-    }
+
 	getDownloadLink(callback){
 	}
+
+	releaseDownloadLink(){
+	}
+
 	getDownloadExtension(){
 	}
 }
@@ -40,26 +47,39 @@ export class ProgressBarGenerator extends ProgressBarExtension{
 export class CanvasGenerator extends ProgressBarGenerator{
 	constructor(element){
 		super(element);
+
+		this._generatedUrl = null;
 		
-		var e = document.querySelector(this.element);
+		const e = document.querySelector(this.element);
 		if(e.tagName.toLowerCase() == "canvas"){
 			this.canvas = e;
 			return;
 		}
 		e.innerHTML = "";
 		
-		var c = document.createElement("canvas");
+		const c = document.createElement("canvas");
 		c.width = this.getSize()[0];
 		c.height = this.getSize()[1];
 		e.appendChild(c);
 		
 		this.canvas = c;
 	}
+
+	getSize(){
+		return [0, 0];
+	}
+
 	getDownloadLink(callback){
 		this.canvas.toBlob(function(blob){
 			callback(URL.createObjectURL(blob));
 		}, "image/png");
 	}
+
+	releaseDownloadLink(){
+		if(this._generatedUrl != null)
+			URL.revokeObjectURL(this._generatedUrl);
+	}
+	
 	getDownloadExtension(){
 		return ".png";
 	}
