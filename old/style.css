@@ -59,3 +59,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 	width: 100%;
 	padding-right: 0;
 }
+#new-version-banner{
+	background-color: red;
+	padding: 1em;
+}
