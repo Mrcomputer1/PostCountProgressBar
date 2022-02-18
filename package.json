@@ -7,7 +7,8 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c --watch",
-    "start": "sirv dist --no-clear"
+    "start": "sirv dist --no-clear",
+    "deploy": "rollup -c && gh-pages --dist dist"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "@rollup/plugin-node-resolve": "^13.1.3",
     "autoprefixer": "^10.4.2",
     "cssnano": "^5.0.17",
+    "gh-pages": "^3.2.3",
     "postcss": "^8.4.6",
     "rollup": "^2.67.2",
     "rollup-plugin-livereload": "^2.0.5",
