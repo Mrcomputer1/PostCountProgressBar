@@ -9,3 +9,5 @@ updates:
     target-branch: "website"
     schedule:
       interval: "weekly"
+    ignore:
+      - dependency-name: "@mrcomputer1/post-count-progress-bar" # Currently, updates will be handled manually.
