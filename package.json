@@ -24,7 +24,7 @@
     "@mrcomputer1/post-count-progress-bar": "github:Mrcomputer1/PostCountProgressBar#v2.1.0",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
-    "autoprefixer": "^10.4.5",
+    "autoprefixer": "^10.4.7",
     "cssnano": "^5.1.7",
     "gh-pages": "^3.2.3",
     "postcss": "^8.4.13",
