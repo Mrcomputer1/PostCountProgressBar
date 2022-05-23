@@ -27,7 +27,7 @@
     "autoprefixer": "^10.4.7",
     "cssnano": "^5.1.7",
     "gh-pages": "^4.0.0",
-    "postcss": "^8.4.13",
+    "postcss": "^8.4.14",
     "rollup": "^2.74.1",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-postcss": "^4.0.2",
