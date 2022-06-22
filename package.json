@@ -28,7 +28,7 @@
     "cssnano": "^5.1.11",
     "gh-pages": "^4.0.0",
     "postcss": "^8.4.14",
-    "rollup": "^2.75.6",
+    "rollup": "^2.75.7",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-svelte": "^7.1.0",
