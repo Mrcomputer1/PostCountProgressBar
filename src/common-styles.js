@@ -1,2 +1,2 @@
-export const INPUT_FIELD_CLASS = "transition duration-300 w-full md:w-1/2 p-2 bg-blue-300 bg-opacity-80 rounded-md shadow-sm text-center focus:outline-none focus:shadow-lg hover:shadow-md invalid:bg-red-300";
+export const INPUT_FIELD_CLASS = "transition duration-300 w-full md:w-1/2 p-2 bg-blue-300 bg-opacity-80 dark:bg-blue-900 dark:text-gray-200 dark:bg-opacity-80 rounded-md shadow-sm text-center focus:outline-none focus:shadow-lg hover:shadow-md invalid:bg-red-300 dark:invalid:bg-red-900";
 export const LINK_CLASS = "text-blue-600 hover:underline";

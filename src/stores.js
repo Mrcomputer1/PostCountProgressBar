@@ -73,3 +73,15 @@ function loadThemes(){
 loadThemes();
 
 export const savedThemesStore = writable(themes);
+
+// Dark mode
+let darkMode = localStorage.getItem("pcpb.dark-mode") == "1";
+
+if(localStorage.getItem("pcpb.dark-mode") === null && matchMedia("(prefers-color-scheme: dark)").matches){
+    localStorage.setItem("pcpb.dark-mode", "1");
+    darkMode = true;
+}
+
+if(darkMode){
+    document.documentElement.classList.toggle("dark", true);
+}

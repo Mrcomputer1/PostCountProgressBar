@@ -7,7 +7,7 @@
  * dismissable: If the banner can be dismissed, requires an ID. - DEFAULT: false
  * startDate: Start date in number of milliseconds since Jan 1, 1970 12:00:00 AM UTC - DEFAULT: no start date (always "started")
  * endDate: End date in number of milliseconds since Jan 1, 1970 12:00:00 AM UTC - DEFAULT: no end date (never "ended")
- * classNames: CSS classes to apply to the banner, tailwindcss available - DEFAULT: ""
+ * classNames: CSS classes to apply to the banner, tailwindcss available (remember dark: alternatives) - DEFAULT: ""
 */
 import {LINK_CLASS} from './common-styles';
 
