@@ -1,6 +1,9 @@
 <script>
     import {modalStore} from '../stores';
 
+    import Msg from '../components/Msg.svelte';
+
+    export let nameId;
     export let name;
 
     function onClose(){
@@ -15,7 +18,7 @@ lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2
 min-w-[50%] min-h-fit
 z-20 p-10 bg-white bg-opacity-80 shadow-xl rounded-lg">
     <div class="font-bold text-lg flex flex-row justify-between mb-2">
-        {name}
+        <Msg id={nameId} defaultMessage={name} />
         <span class="cursor-pointer select-none" on:click={onClose}>&cross;</span>
     </div>
     <div class="flex-grow">

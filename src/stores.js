@@ -1,5 +1,7 @@
 import { writable } from "svelte/store";
 
+import { formatMsg } from './i18n';
+
 const query = new URLSearchParams(document.location.search);
 
 export const activeStepStore = writable(1);
@@ -7,7 +9,7 @@ export const activeStepStore = writable(1);
 export const progressBarConfigStore = writable({
     posts: query.has("posts") ? parseInt(query.get("posts")) : 50,
     total: query.has("goal") ? parseInt(query.get("goal")) : 100,
-    unit: query.get("unit") ?? "posts",
+    unit: query.get("unit") ?? formatMsg("app.default-unit", "posts"),
     theme: query.get("theme") ?? "default",
     style: query.get("style") ?? "CanvasBigGenerator",
     customTheme: {

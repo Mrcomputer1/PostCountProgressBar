@@ -1,6 +1,8 @@
 <script>
     import Button from './components/Button.svelte';
 
+    import Msg from './components/Msg.svelte';
+
     import {activeStepStore, progressBarDownloadUrl} from './stores';
 
     export let form;
@@ -52,16 +54,16 @@
 
 <div class="py-1 flex flex-col sm:flex-row justify-evenly">
     {#if $activeStepStore !== 1}
-    <Button on:click={prevPage}>Back</Button>
+    <Button on:click={prevPage}><Msg id="app.buttons.back" defaultMessage="Back" /></Button>
     {/if}
     <Button on:click={previewDownload} success={$activeStepStore === 4}>
         {#if $activeStepStore === 4}
-        Download
+        <Msg id="app.buttons.download" defaultMessage="Download" />
         {:else}
-        Preview
+        <Msg id="app.buttons.preview" defaultMessage="Preview" />
         {/if}
     </Button>
     {#if $activeStepStore !== 4}
-    <Button on:click={nextPage}>Next</Button>
+    <Button on:click={nextPage}><Msg id="app.buttons.next" defaultMessage="Next" /></Button>
     {/if}
 </div>

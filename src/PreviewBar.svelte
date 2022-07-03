@@ -1,6 +1,8 @@
 <script>
     import {ProgressBar, themes, generators} from '@mrcomputer1/post-count-progress-bar';
 
+    import {formatMsg} from './i18n';
+
     import {progressBarConfigStore, progressBarDownloadUrl, activeStepStore} from './stores';
 
     let progressBar = null;
@@ -11,7 +13,7 @@
         }
 
         if($progressBarConfigStore.posts > $progressBarConfigStore.total){
-            alert("You've already met your goal! You should increase your goal!");
+            alert(formatMsg("app.preview.errors.goal-met", "You've already met your goal! You should increase your goal!"));
             $activeStepStore = 1;
             return false;
         }

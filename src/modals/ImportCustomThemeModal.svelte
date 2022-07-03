@@ -1,10 +1,12 @@
 <script>
     import Modal from '../components/Modal.svelte';
-    import SelectInputField from '../components/SelectInputField.svelte';
     import Button from '../components/Button.svelte';
 
     import {progressBarConfigStore, modalStore, savedThemesStore} from '../stores';
     
+    import { formatMsg } from '../i18n';
+    import Msg from '../components/Msg.svelte';
+
     import { ProgressBar, themes, generators } from '@mrcomputer1/post-count-progress-bar';
     import { onMount } from 'svelte';
 
@@ -12,7 +14,7 @@
     const ID_REGEX = /^[a-z0-9\-]{0,36}$/i;
 
     function invalidSharedTheme(ref){
-        alert("Invalid shared theme. (Ref:#" + ref + ")");
+        alert(formatMsg("modals.import-theme.errors.invalid", "Invalid shared theme. (Ref:#{ref})", {ref}));
         
         closeModal();
     }
@@ -36,7 +38,7 @@
             }
 
             if($savedThemesStore.findIndex(item => item.id === sharedTheme.id) !== -1){
-                alert("You already have this theme.");
+                alert(formatMsg("modals.import-theme.errrors.non-unique", "You already have this theme."));
                 closeModal();
                 return;
             }
@@ -96,13 +98,13 @@
     });
 </script>
 
-<Modal name="A theme has been shared with you!">
+<Modal nameId="modals.import-theme.title" name="A theme has been shared with you!">
     <div class="flex flex-col items-center">
         <strong class="pt-4">{sharedTheme.name}</strong>
         <div id="progress-bar-shared-theme-preview" class="pt-4"></div>
     </div>
     <div class="pt-6 flex flex-col sm:flex-row justify-evenly">
-        <Button on:click={importTheme} success>Save Theme</Button>
-        <Button on:click={closeModal}>Don't Save</Button>
+        <Button on:click={importTheme} success><Msg id="modals.import-theme.save-btn" defaultMessage="Save Theme" /></Button>
+        <Button on:click={closeModal}><Msg id="modals.import-theme.dont-save-btn" defaultMessage="Don't Save" /></Button>
     </div>
 </Modal>

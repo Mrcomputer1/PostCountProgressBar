@@ -3,6 +3,9 @@
     import SelectInputField from '../components/SelectInputField.svelte';
     import Button from '../components/Button.svelte';
 
+    import {formatMsg} from '../i18n';
+    import Msg from '../components/Msg.svelte';
+
     import {progressBarConfigStore, modalStore, savedThemesStore} from '../stores';
 
     let theme = null;
@@ -10,7 +13,7 @@
     function load(){
         let wantedTheme = $savedThemesStore.find(item => item.id === theme);
         if(!wantedTheme){
-            alert("No theme selected or it couldn't be found.");
+            alert(formatMsg("modals.favourites.errors.none-selected", "No theme selected or it couldn't be found."));
             return;
         }
 
@@ -23,7 +26,7 @@
     }
 
     function delTheme(){
-        if(!confirm("Are you sure?"))
+        if(!confirm(formatMsg("generic.confirmation", "Are you sure?")))
             return;
 
         $savedThemesStore = $savedThemesStore.filter(item => item.id !== theme);
@@ -49,21 +52,27 @@
         });
         url += "?" + params.toString();
 
-        prompt("Here is your share URL", url);
+        prompt(formatMsg("modals.favourites.share-url", "Here is your share URL"), url);
     }
 </script>
 
-<Modal name="Load a custom theme">
+<Modal nameId="modals.favourites.title" name="Load a custom theme">
     <SelectInputField id="custom-theme" bind:value={theme}>
-        <span slot="name">Favourite Themes</span>
+        <span slot="name"><Msg id="modals.favourites.header" defaultMessage="Favourite Themes" /></span>
         {#each $savedThemesStore as theme (theme.id)}
             <option value={theme.id}>{theme.name}</option>
         {/each}
     </SelectInputField>
 
     <div class="pt-6 flex flex-col sm:flex-row justify-evenly">
-        <Button on:click={load} disabled={theme == null}>Load Theme</Button>
-        <Button on:click={shareTheme} disabled={theme == null}>Share Theme</Button>
-        <Button on:click={delTheme} disabled={theme == null}>Delete Theme</Button>
+        <Button on:click={load} disabled={theme == null}>
+            <Msg id="modals.favourites.load-btn" defaultMessage="Load Theme" />
+        </Button>
+        <Button on:click={shareTheme} disabled={theme == null}>
+            <Msg id="modals.favourites.share-btn" defaultMessage="Share Theme" />
+        </Button>
+        <Button on:click={delTheme} disabled={theme == null}>
+            <Msg id="modals.favourites.delete-btn" defaultMessage="Delete Theme" />
+        </Button>
     </div>
 </Modal>

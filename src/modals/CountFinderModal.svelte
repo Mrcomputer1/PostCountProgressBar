@@ -5,6 +5,9 @@
 
     import {progressBarConfigStore, modalStore} from '../stores';
 
+    import { formatMsg } from '../i18n';
+    import Msg from '../components/Msg.svelte';
+
     import {LINK_CLASS} from '../common-styles';
 
     const USERNAME_REGEX = /^[\w-]{3,20}$/;
@@ -25,7 +28,7 @@
 
     async function findPostCount(){
         if(!USERNAME_REGEX.test(username)){
-            alert("Your username is not valid.");
+            alert(formatMsg("modals.count-finder.errors.username-invalid", "Your username is not valid."));
             return;
         }
 
@@ -34,9 +37,9 @@
         try{
             let res = await fetch("https://scratchdb.lefty.one/v3/forum/user/info/" + username);
             if(res.status === 400){
-                alert("Your username is not valid.");
+                alert(formatMsg("modals.count-finder.errors.username-invalid", "Your username is not valid."));
             }else if(res.status === 404){
-                alert("This username does not exist.");
+                alert(formatMsg("modals.count-finder.errors.username-not-exist", "This username does not exist."));
             }
 
             if(res.status !== 200){
@@ -50,7 +53,7 @@
 
             $modalStore = null;
         }catch(e){
-            alert("Something went wrong! " + e);
+            alert(formatMsg("generic.error", "Something went wrong! {e}", {e: e.toString()}));
             console.error(e);
         }finally{
             working = false;
@@ -58,21 +61,59 @@
     }
 </script>
 
-<Modal name="Find your post count">
+<Modal nameId="modals.count-finder.title" name="Find your post count">
     <details open>
-        <summary class="cursor-pointer">Automatically (via ScratchDB)</summary>
-        <TextInputField id="username" required bind:value={username}>Scratch Username</TextInputField>
+        <summary class="cursor-pointer"><Msg id="modals.count-finder.automatic" defaultMessage="Automatically (via ScratchDB)" /></summary>
+        <TextInputField id="username" required bind:value={username}>
+            <Msg id="modals.count-finder.automatic.username" defaultMessage="Scratch Username" />
+        </TextInputField>
 
         <div class="flex pt-2 w-1/2 mx-auto">
-            <Button on:click={findPostCount} working={working} disabled={working}>Find Post Count</Button>
+            <Button on:click={findPostCount} working={working} disabled={working}>
+                <Msg id="modals.count-finder.automatic.submit-btn" defaultMessage="Find Post Count" />
+            </Button>
         </div>
     </details>
     <details>
-        <summary class="cursor-pointer">Manually</summary>
+        <summary class="cursor-pointer"><Msg id="modals.count-finder.manual" defaultMessage="Manually" /></summary>
         <ol class="list-decimal list-inside">
-            <li>Visit the <a href="https://scratch.mit.edu/discuss/" class={LINK_CLASS} target="_blank">Scratch Discussion Forums</a>.</li>
-            <li>Near the bottom of the page, find "Show your topics/posts", click "<a href="https://scratch.mit.edu/discuss/search/?action=show_user&show_as=posts" class={LINK_CLASS} target="_blank">posts</a>".</li>
-            <li>At the top, you will see "Found &lt;number&gt; posts.", the number is your post count.</li>
+            <li>
+                <Msg id="modals.count-finder.manual.steps.1" defaultMessage="Visit the <link>Scratch Discussion Forums</link>."
+                    values={{
+                        link: text => {
+                            return {
+                                tag: "a",
+                                attrs: {
+                                    href: "https://scratch.mit.edu/discuss",
+                                    class: LINK_CLASS,
+                                    target: "_blank"
+                                },
+                                body: text
+                            }
+                        }
+                    }}
+                />
+            </li>
+            <li>
+                <Msg id="modals.count-finder.manual.steps.2" defaultMessage='Near the bottom of the page, find "Show your topics/posts", click "<link>posts</link>".'
+                    values={{
+                        link: text => {
+                            return {
+                                tag: "a",
+                                attrs: {
+                                    href: "https://scratch.mit.edu/discuss/search/?action=show_user&show_as=posts",
+                                    class: LINK_CLASS,
+                                    target: "_blank"
+                                },
+                                body: text
+                            }
+                        }
+                    }}
+                />
+            </li>
+            <li>
+                <Msg id="modals.count-finder.manual.steps.3" defaultMessage={"At the top, you will see \"Found '<number> posts.\", the number is your post count."} />
+            </li>
         </ol>
     </details>
 </Modal>
