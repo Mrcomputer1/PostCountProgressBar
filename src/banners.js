@@ -13,6 +13,13 @@ import {LINK_CLASS} from './common-styles';
 
 export default [
     {
+        id: "1fa47d21-e874-450a-b833-c924692d5563",
+        html: `Rest in peace Technoblade 🐖👑`,
+        icon: "sentiment_very_dissatisfied",
+        dismissable: true,
+        endDate: 1659312000000 // 01/08/2022 12:00:00 AM UTC
+    },
+    {
         id: "1d80e6b9-c1ea-4755-8947-6cbad9e3b9ba",
         html: `
         <strong>Welcome to the updated Post Count Progress Bar website!</strong><br>
