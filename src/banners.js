@@ -12,27 +12,25 @@
 import {LINK_CLASS} from './common-styles';
 
 export default [
+    // RIP Technoblade
     {
         id: "1fa47d21-e874-450a-b833-c924692d5563",
         html: `Rest in peace Technoblade 🐖👑`,
-        icon: "sentiment_very_dissatisfied",
-        dismissable: true,
+        icon: "sentiment_very_dissatisfied", // :( face
+        dismissable: false,
         endDate: 1659312000000 // 01/08/2022 12:00:00 AM UTC
     },
+    
+    // Dark mode+translation support
     {
-        id: "1d80e6b9-c1ea-4755-8947-6cbad9e3b9ba",
+        id: "e8eaa57d-0e62-441b-a883-bcbeeee41338",
         html: `
-        <strong>Welcome to the updated Post Count Progress Bar website!</strong><br>
-        New Features:
-        <ul class="list-disc list-inside">
-            <li>New website built using <a href="https://svelte.dev/" target="_blank" class="${LINK_CLASS}">Svelte</a> and <a href="https://tailwindcss.com" target="_blank" class="${LINK_CLASS}">Tailwind CSS</a>.</li>
-            <li>Custom themes, which you can save and share.</li>
-            <li>Lookup your post count with ScratchDB.</li>
-        </ul>
+        <strong>Dark mode and translation support.</strong><br>
+        You can toggle dark mode and change language in the Settings menu at the bottom of the page.<br>
         If you find any issues, you can report them on <a href="https://github.com/Mrcomputer1/PostCountProgressBar/issues" target="_blank" class="${LINK_CLASS}">GitHub</a> or on my <a href="https://scratch.mit.edu/users/Mrcomputer1/#comments" target="_blank" class="${LINK_CLASS}">Scratch profile</a>.<br>
-        The old version of this website is still available <a href="https://mrcomputer1.github.io/PostCountProgressBar/old/" class="${LINK_CLASS}">here</a>.
+        Instructions for translating can be found <a href="https://github.com/Mrcomputer1/PostCountProgressBar/wiki/Translating" target="_blank" class="${LINK_CLASS}">here</a>.
         `,
         dismissable: true,
-        endDate: 1650240000000 // 18/04/2022 12:00:00 AM UTC
+        endDate: 1658102400000 // 18/07/2022 12:00:00 AM UTC
     }
 ];
