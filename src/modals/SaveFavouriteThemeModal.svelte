@@ -5,7 +5,7 @@
     import TextInputField from '../components/TextInputField.svelte';
     import Button from '../components/Button.svelte';
 
-    import {formatMsg, intlStore} from '../i18n';
+    import {formatMsg} from '../i18n';
     import Msg from '../components/Msg.svelte';
 
     import {progressBarConfigStore, modalStore, savedThemesStore} from '../stores';

@@ -5,6 +5,7 @@
     import FavouriteCustomThemesModal from './modals/FavouriteCustomThemesModal.svelte';
     import SaveFavouriteThemeModal from './modals/SaveFavouriteThemeModal.svelte';
     import ImportCustomThemeModal from './modals/ImportCustomThemeModal.svelte';
+    import SettingsModal from './modals/SettingsModal.svelte';
 </script>
 
 {#if $modalStore === "count-finder"}
@@ -15,4 +16,6 @@
     <SaveFavouriteThemeModal />
 {:else if $modalStore === "import-custom-theme"}
     <ImportCustomThemeModal />
+{:else if $modalStore === "settings"}
+    <SettingsModal />
 {/if}

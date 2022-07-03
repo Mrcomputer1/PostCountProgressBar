@@ -15,18 +15,12 @@
 
     import { LINK_CLASS } from './common-styles';
 
-    import {activeStepStore} from './stores';
+    import {activeStepStore, modalStore} from './stores';
 
     let form;
 
-    function toggleTheme(){
-        document.documentElement.classList.toggle("dark");
-
-        if(document.documentElement.classList.contains("dark")){
-            localStorage.setItem("pcpb.dark-mode", "1");
-        }else{
-            localStorage.setItem("pcpb.dark-mode", "0");
-        }
+    function openSettings(){
+        $modalStore = "settings";
     }
 </script>
 
@@ -68,8 +62,8 @@
         <a href="https://github.com/Mrcomputer1/PostCountProgressBar" target="_blank" class={LINK_CLASS}>
             <Msg id="app.source-code" defaultMessage="Source Code" />
         </a> &bullet;
-        <span class={LINK_CLASS + " cursor-pointer"} on:click={toggleTheme}>
-            <Msg id="app.toggle-theme" defaultMessage="Toggle Theme" />
+        <span class={LINK_CLASS + " cursor-pointer"} on:click={openSettings}>
+            <Msg id="app.settings" defaultMessage="Settings" />
         </span>
     </div>
 </div>
