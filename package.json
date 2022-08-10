@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/Mrcomputer1/PostCountProgressBar#readme",
   "devDependencies": {
-    "@formatjs/intl": "^2.3.0",
+    "@formatjs/intl": "^2.3.1",
     "@mrcomputer1/post-count-progress-bar": "github:Mrcomputer1/PostCountProgressBar#v2.1.0",
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-node-resolve": "^13.3.0",
