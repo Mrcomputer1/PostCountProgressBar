@@ -26,7 +26,7 @@
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "autoprefixer": "^10.4.8",
-    "cssnano": "^5.1.12",
+    "cssnano": "^5.1.13",
     "gh-pages": "^4.0.0",
     "postcss": "^8.4.14",
     "rollup": "^2.77.2",
