@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/Mrcomputer1/PostCountProgressBar#readme",
   "devDependencies": {
-    "@babel/core": "^7.21.0",
+    "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
     "babel-loader": "^8.2.5",
     "webpack": "^5.77.0",
