@@ -19,7 +19,7 @@
 
     let form;
 
-    function openSettings(){
+    function openSettings(e){
         $modalStore = "settings";
     }
 </script>
@@ -62,9 +62,9 @@
         <a href="https://github.com/Mrcomputer1/PostCountProgressBar" target="_blank" class={LINK_CLASS}>
             <Msg id="app.source-code" defaultMessage="Source Code" />
         </a> &bullet;
-        <span class={LINK_CLASS + " cursor-pointer"} on:click={openSettings}>
+        <button class={LINK_CLASS + " cursor-pointer"} on:click={openSettings}>
             <Msg id="app.settings" defaultMessage="Settings" />
-        </span>
+        </button>
     </div>
 </div>
 

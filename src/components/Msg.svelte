@@ -17,7 +17,8 @@
         {#if typeof part === "string"}
             {part}
         {:else}
-            <svelte:element this={part.tag} {...part.attrs}>{part.body}</svelte:element>
+            <!-- Something is casuing Svelte to not convert {...parts.attrs}, so we get this hack for now... Very likely to break at some point. -->
+            <svelte:element this={part.tag} {...eval("ctx[5].attrs")}>{part.body}</svelte:element>
         {/if}
     {/each}
 {/if}

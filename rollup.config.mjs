@@ -2,8 +2,10 @@ import svelte from 'rollup-plugin-svelte';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 import postcss from 'rollup-plugin-postcss';
+
+import { spawn } from 'child_process';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -20,7 +22,7 @@ function serve(){
             if(server)
                 return;
             
-            server = require("child_process").spawn("npm", ["run", "start", "--", "--dev"], {
+            server = spawn("npm", ["run", "start", "--", "--dev"], {
                 stdio: ["ignore", "inherit", "inherit"],
                 shell: true
             });

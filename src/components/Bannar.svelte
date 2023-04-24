@@ -23,6 +23,6 @@ shadow-md p-3 mb-5 bg-white bg-opacity-70 dark:bg-black dark:bg-opacity-70 dark:
     <span class="mr-5 material-icons select-none">{icon}</span>
     <p class="text-left flex-grow"><slot></slot></p>
     {#if dismissable && id !== null}
-        <span class="ml-5 cursor-pointer" on:click={onDismiss} data-id={id}>&cross;</span>
+        <button class="ml-5 cursor-pointer" on:click={onDismiss} data-id={id}>&cross;</button>
     {/if}
 </div>

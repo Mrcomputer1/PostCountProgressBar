@@ -17,9 +17,9 @@
 
 <NumberInputField id="posts" bind:value={$progressBarConfigStore.posts} required>
     <Msg id="pages.progress.current-posts" defaultMessage="Current Posts" />
-    <span class={LINK_CLASS + " cursor-pointer"} on:click={onPostClick}>
+    <button class={LINK_CLASS + " cursor-pointer"} on:click={onPostClick}>
         <Msg id="pages.progress.current-posts.find" defaultMessage="(find)" />
-    </span>
+    </button>
 </NumberInputField>
 
 <NumberInputField id="total" bind:value={$progressBarConfigStore.total} required>
