@@ -5,9 +5,13 @@
     export let defaultMessage;
     export let values = {};
 
-    let message = $intlStore.formatMessage({
-        id, defaultMessage
-    }, values);
+    let message;
+
+    intlStore.subscribe(intl => {
+        message = intl.formatMessage({
+            id, defaultMessage
+        }, values);
+    })
 </script>
 
 {#if typeof message === "string"}

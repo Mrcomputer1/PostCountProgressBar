@@ -10,7 +10,8 @@
 
     const SUPPORTED_LANGUAGES = [
         {id: "en-AU", name: "English (Australia) - Default"},
-        {id: "en-US", name: "English (United States)"}
+        {id: "en-US", name: "English (United States)"},
+        {id: "lt", name: "Lithuanian"}
     ];
 
     let selectLang = null;
