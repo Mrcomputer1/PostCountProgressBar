@@ -10,6 +10,7 @@ export const progressBarConfigStore = writable({
     posts: query.has("posts") ? parseInt(query.get("posts")) : 50,
     total: query.has("goal") ? parseInt(query.get("goal")) : 100,
     unit: query.get("unit") ?? formatMsg("app.default-unit", "posts"),
+    defaultUnit: formatMsg("app.default-unit", "posts"),
     theme: query.get("theme") ?? "default",
     style: query.get("style") ?? "CanvasBigGenerator",
     customTheme: {

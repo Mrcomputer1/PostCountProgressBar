@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store';
+import { writable, get } from 'svelte/store';
 
 import { createIntl, createIntlCache } from '@formatjs/intl';
 
@@ -36,7 +36,19 @@ async function loadLanguage(langId){
             onWarn: console.warn
         }, intlCache);
         intlStore.set(intl);
+
         document.title = formatMsg("app.title", "Post Count Progress Bar");
+
+        // Update unit value if not already adjusted
+        const {progressBarConfigStore} = await import("./stores.js");
+
+        const unit = formatMsg("app.default-unit", "posts");
+        const config = get(progressBarConfigStore);
+        if(config.unit === config.defaultUnit)
+            config.unit = unit;
+        config.defaultUnit = unit;
+        progressBarConfigStore.set(config);
+
         return;
     }
 
@@ -52,7 +64,18 @@ async function loadLanguage(langId){
             onWarn: console.warn
         }, intlCache);
         intlStore.set(intl);
+
         document.title = formatMsg("app.title", "Post Count Progress Bar");
+
+        // Update unit value if not already adjusted
+        const {progressBarConfigStore} = await import("./stores.js");
+
+        const unit = formatMsg("app.default-unit", "posts");
+        const config = get(progressBarConfigStore);
+        if(config.unit === config.defaultUnit)
+            config.unit = unit;
+        config.defaultUnit = unit;
+        progressBarConfigStore.set(config);
     }catch(e){
         alert("Something went wrong while loading language data. " + e);
         console.error(e);

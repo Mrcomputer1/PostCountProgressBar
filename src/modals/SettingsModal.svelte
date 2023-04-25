@@ -22,7 +22,7 @@
         await setLanguage(selectLang);
         languageChanging = false;
 
-        document.location.reload();
+        //document.location.reload();
     }
 
     function toggleTheme(){
