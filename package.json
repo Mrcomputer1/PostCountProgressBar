@@ -29,7 +29,7 @@
     "cssnano": "^6.0.1",
     "gh-pages": "^5.0.0",
     "postcss": "^8.4.23",
-    "rollup": "^3.21.2",
+    "rollup": "^3.23.0",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-svelte": "^7.1.4",
